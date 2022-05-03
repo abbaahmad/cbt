@@ -1,13 +1,15 @@
-package com.fip.cbt.repositories;
+package com.fip.cbt.repository;
 
-import com.fip.cbt.models.Candidate;
+import com.fip.cbt.model.Candidate;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
+import java.util.Optional;
+
 public interface CandidateRepository extends MongoRepository<Candidate, String> {
 
-    @Query("{Candidate:'?0'}")
-    Candidate findByUsername(String username);
+    @Query("{username:'?0'}")
+    Optional<Candidate> findByUsername(String username);
 
     //@Query("")
     //List<Candidate> findByRole(String rolename);

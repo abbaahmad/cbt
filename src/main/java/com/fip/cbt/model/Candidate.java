@@ -1,4 +1,4 @@
-package com.fip.cbt.models;
+package com.fip.cbt.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,6 @@ import lombok.experimental.Accessors;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
@@ -36,5 +35,6 @@ public class Candidate {
 //            name="test",
 //            joinColumns = @JoinColumn(name="test_id")
 //    )
+    @DBRef
     private Set<Test> testsTaken;
 }
